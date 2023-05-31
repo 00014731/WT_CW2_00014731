@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  .container
+    h1 Create Product
+
+    if error
+      p.error Some error occurred! Try again!
+
+    if success
+      p.success Product is created!
+
+    form(action='/products/create' method='POST')
+      label Title
+      input.input(type='text' name='title')
+
+      label Description
+      textarea.input(type='text' name='description')
+
+      label Price
+      input.input(type='text' name='price')
+
+      button.btn Create Product

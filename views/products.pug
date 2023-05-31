@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  .container
+    h1 All Products
+
+    each product in products
+      div.product-wrapper
+        a.product(href=`/products/${product.id}`) #{product.title}
+        a.delete(href='#') delete
